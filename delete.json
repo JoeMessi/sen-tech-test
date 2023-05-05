@@ -1,0 +1,82 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["*.config.js"],
+  "rules": {
+    //Only allow ++ for loops: https://eslint.org/docs/rules/no-plusplus
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+
+    "import/prefer-default-export": "off",
+    "no-nested-ternary": "off",
+
+    // sort imports
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+
+    "react/no-unused-prop-types": 1,
+
+    //Enforce double quotes and allow backticks for literals: https://eslint.org/docs/rules/quotes
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      { "allowTemplateLiterals": true }
+    ],
+
+    "@typescript-eslint/ban-types": 0,
+
+    //https://github.com/typescript-eslint/typescript-eslint/blob/v4.33.0/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+
+    //https://github.com/typescript-eslint/typescript-eslint/blob/v4.33.0/packages/eslint-plugin/docs/rules/no-shadow.md
+    // "@typescript-eslint/no-shadow": 0,
+
+    "arrow-body-style": 1,
+
+    //https://github.com/facebook/react/issues/14920
+    "react-hooks/exhaustive-deps": "warn",
+
+    //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md
+    "react/jsx-key": [1, { "checkFragmentShorthand": true }],
+
+    //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+    "react/jsx-props-no-spreading": 0,
+
+    //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+    "react/require-default-props": 0,
+
+    //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+    "react/no-array-index-key": 1,
+
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "radix": 0,
+    "linebreak-style": "off",
+    "no-param-reassign": [2, { "props": false }]
+  }
+}
