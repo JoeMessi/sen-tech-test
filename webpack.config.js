@@ -31,4 +31,9 @@ module.exports = {
       template: "src/index.html",
     }),
   ],
+  devServer: {
+    static: path.resolve(__dirname, "./dist"),
+    hot: true,
+    historyApiFallback: true,
+  },
 };
