@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { RoutePaths } from "src/app/routes/route-paths";
 
 interface VideoPlayerProps {
-  id: string | undefined;
-  title: string | undefined;
-  tags: string[] | undefined;
-  viewCount: string | undefined;
-  likeCount: string | undefined;
+  id?: string;
+  title?: string;
+  tags?: string[];
+  viewCount?: string;
+  likeCount?: string;
 }
 
 export const VideoPlayer = ({

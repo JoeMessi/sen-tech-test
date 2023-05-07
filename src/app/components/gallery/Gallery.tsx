@@ -1,17 +1,16 @@
 import * as S from "./Gallery.styles";
 import { Thumbnail } from "../thumbnail/Thumbnail";
 import { Video } from "src/app/store/videoStore";
+import { memo } from "react";
 
 interface GalleryProps {
   videos: Video[];
 }
 
-export const Gallery = ({ videos }: GalleryProps) => {
+export const Gallery = memo(({ videos }: GalleryProps) => {
   return (
     <S.Gallery data-testid="gallery">
-      {videos?.map((video) => {
-        const { id, snippet } = video;
-        const { title, thumbnails } = snippet;
+      {videos?.map(({ id, snippet: { title, thumbnails } }) => {
         return (
           <Thumbnail
             key={id}
@@ -24,4 +23,4 @@ export const Gallery = ({ videos }: GalleryProps) => {
       })}
     </S.Gallery>
   );
-};
+});

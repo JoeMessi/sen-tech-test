@@ -5,7 +5,7 @@ import { VideoPlayer } from "src/app/components/video-player/VideoPlayer";
 import { withAppWrapper } from "src/app/shared/appWrapper";
 
 const Player = () => {
-  let { id } = useParams();
+  const { id } = useParams();
 
   const { video, fetchVideoById, error, isLoading } = videoStore();
 
@@ -16,7 +16,7 @@ const Player = () => {
 
   useEffect(() => {
     fetchVideoById(id!);
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <div data-testid="loading">Loading...</div>;
