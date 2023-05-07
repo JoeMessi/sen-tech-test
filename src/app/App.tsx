@@ -1,12 +1,5 @@
 import { Suspense, lazy } from "react";
-import {
-  Routes,
-  Route,
-  Outlet,
-  Link,
-  BrowserRouter,
-  NavLink,
-} from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { RoutePaths } from "./routes/route-paths";
 
 const Home = lazy(() => import("./pages/home/Home"));

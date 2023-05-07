@@ -8,12 +8,17 @@ interface ThumbnailProps {
   img: string;
 }
 
+const titleLength = 50;
+
 export const Thumbnail = ({ id, title, img }: ThumbnailProps) => {
+  const trimTitle =
+    title.length > titleLength ? `${title.slice(0, titleLength)}...` : title;
+
   return (
     <Link to={RoutePaths.PLAYER(id)}>
       <S.Card id={id}>
         <img src={img} alt="alt" />
-        <p>{title}</p>
+        <S.Para>{trimTitle}</S.Para>
       </S.Card>
     </Link>
   );

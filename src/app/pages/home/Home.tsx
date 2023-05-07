@@ -1,5 +1,4 @@
 import { Gallery } from "src/app/components/gallery/Gallery";
-import { Thumbnail } from "src/app/components/thumbnail/Thumbnail";
 import * as S from "./Home.styles";
 import { videoStore } from "src/app/store/videoStore";
 import { useEffect } from "react";
