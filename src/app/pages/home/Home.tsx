@@ -1,8 +1,9 @@
-import { Gallery } from "src/components/gallery/Gallery";
-import { Thumbnail } from "src/components/thumbnail/Thumbnail";
+import { Gallery } from "src/app/components/gallery/Gallery";
+import { Thumbnail } from "src/app/components/thumbnail/Thumbnail";
 import * as S from "./Home.styles";
-import { videoStore } from "src/store/videoStore";
+import { videoStore } from "src/app/store/videoStore";
 import { useEffect } from "react";
+import { withAppWrapper } from "src/app/shared/appWrapper";
 
 const Home = () => {
   const { videos, isLoading, error, fetchVideos } = videoStore();
@@ -19,10 +20,6 @@ const Home = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  return (
-    <S.Wrap>
-      <Gallery videos={videos} />
-    </S.Wrap>
-  );
+  return <Gallery videos={videos} />;
 };
-export default Home;
+export default withAppWrapper(Home);

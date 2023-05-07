@@ -5,4 +5,6 @@ const regionCode = "GB";
 const part = "snippet,contentDetails,statistics";
 const chart = "mostPopular";
 
-export const url = `${apiUrl}?key=${apiKey}&part=${part}&chart=${chart}&maxResults=${maxResults}&regionCode=${regionCode}`;
+export const listUrl = `${apiUrl}?key=${apiKey}&part=${part}&chart=${chart}&maxResults=${maxResults}&regionCode=${regionCode}`;
+export const byIdUrl = (videoId: string) =>
+  `${apiUrl}?key=${apiKey}&id=${videoId}&part=${part}`;
