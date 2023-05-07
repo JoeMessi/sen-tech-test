@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { videoStore } from "src/app/store/videoStore";
-import { useEffect } from "react";
+import { FC, ReactNode, useEffect } from "react";
 import { VideoPlayer } from "src/app/components/video-player/VideoPlayer";
 import { withAppWrapper } from "src/app/shared/appWrapper";
 

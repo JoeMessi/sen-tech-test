@@ -6,4 +6,6 @@ export const H1 = styled.h1`
 
 export const Wrapper = styled.div`
   padding: 1em 2em 2em 2em;
+  max-width: 80%;
+  margin: 0 auto;
 `;

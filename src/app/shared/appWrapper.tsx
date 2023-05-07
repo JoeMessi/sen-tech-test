@@ -1,6 +1,7 @@
+import { ComponentType } from "react";
 import * as S from "./appWrapper.styles";
 
-export const withAppWrapper = (WrappedComponent: any) => {
+export const withAppWrapper = (WrappedComponent: ComponentType) => {
   return () => {
     return (
       <S.Wrapper>
