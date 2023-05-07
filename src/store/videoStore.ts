@@ -6,11 +6,16 @@ export interface Video {
   id: string;
   snippet: {
     title: string;
+    tags: string[];
     thumbnails: {
       medium: {
         url: string;
       };
     };
+  };
+  statistics: {
+    viewCount: string;
+    likeCount: string;
   };
 }
 
@@ -21,13 +26,12 @@ interface videoStoreProps {
   fetchVideos: () => void;
 }
 
-export const videoStore = create<videoStoreProps>((set) => ({
+export const videoStore = create<videoStoreProps>((set, get) => ({
   videos: [],
   isLoading: true,
   error: null,
 
   fetchVideos: async () => {
-    console.log("here");
     try {
       const response = await axios.get(url);
       const data = response.data.items;

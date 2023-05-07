@@ -1,7 +1,7 @@
 import { Gallery } from "src/components/gallery/Gallery";
 import { Thumbnail } from "src/components/thumbnail/Thumbnail";
 import * as S from "./Home.styles";
-import { videoStore } from "src/store/store";
+import { videoStore } from "src/store/videoStore";
 import { useEffect } from "react";
 
 const Home = () => {
