@@ -19,11 +19,11 @@ const Player = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div data-testid="loading">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div data-testid="error">Error: {error.message}</div>;
   }
 
   return (
@@ -34,6 +34,7 @@ const Player = () => {
         tags={tags}
         viewCount={viewCount}
         likeCount={likeCount}
+        data-testid="player"
       />
     </>
   );

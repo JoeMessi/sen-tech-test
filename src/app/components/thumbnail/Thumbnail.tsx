@@ -15,9 +15,9 @@ export const Thumbnail = ({ id, title, img }: ThumbnailProps) => {
     title.length > titleLength ? `${title.slice(0, titleLength)}...` : title;
 
   return (
-    <Link to={RoutePaths.PLAYER(id)}>
+    <Link to={RoutePaths.PLAYER(id)} data-testid="thumbnail">
       <S.Card id={id}>
-        <img src={img} alt="alt" />
+        <img src={img} alt={title} />
         <S.Para>{trimTitle}</S.Para>
       </S.Card>
     </Link>

@@ -1,5 +1,4 @@
 import { Gallery } from "src/app/components/gallery/Gallery";
-import * as S from "./Home.styles";
 import { videoStore } from "src/app/store/videoStore";
 import { useEffect } from "react";
 import { withAppWrapper } from "src/app/shared/appWrapper";
@@ -12,13 +11,13 @@ const Home = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div data-testid="loading">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div data-testid="error">Error: {error.message}</div>;
   }
 
-  return <Gallery videos={videos} />;
+  return <Gallery videos={videos} data-testid="gallery" />;
 };
 export default withAppWrapper(Home);

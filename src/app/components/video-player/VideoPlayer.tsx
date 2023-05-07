@@ -18,15 +18,16 @@ export const VideoPlayer = ({
   viewCount,
   likeCount,
 }: VideoPlayerProps) => {
-  const mappedTags = tags?.map((t) => <li>{t}</li>);
+  const mappedTags = tags?.map((t, i) => <li key={i}>{t}</li>);
 
   return (
-    <S.Card>
+    <S.Card data-testid="player">
       <Link to={RoutePaths.HOME}>
         <S.BackBtn>Home</S.BackBtn>
       </Link>
       <S.PlayerBox>
         <ReactPlayer
+          data-testid="videoPlayer"
           url={`https://www.youtube.com/watch?v=${id}`}
           width="100%"
           controls={true}
@@ -72,8 +73,12 @@ export const VideoPlayer = ({
           <S.TagsUl>{mappedTags}</S.TagsUl>
         </div>
         <div>
-          <p>view: {viewCount}</p>
-          <p>likes: {likeCount}</p>
+          <p>
+            <b>view:</b> {viewCount}
+          </p>
+          <p>
+            <b>likes:</b> {likeCount}
+          </p>
         </div>
       </S.InnerBox>
     </S.Card>

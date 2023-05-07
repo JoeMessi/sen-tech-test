@@ -8,7 +8,7 @@ interface GalleryProps {
 
 export const Gallery = ({ videos }: GalleryProps) => {
   return (
-    <S.Gallery>
+    <S.Gallery data-testid="gallery">
       {videos?.map((video) => {
         const { id, snippet } = video;
         const { title, thumbnails } = snippet;
@@ -18,6 +18,7 @@ export const Gallery = ({ videos }: GalleryProps) => {
             id={id}
             title={title}
             img={thumbnails.medium.url}
+            data-testid="thumbnail"
           />
         );
       })}
