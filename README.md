@@ -45,4 +45,4 @@ to make a production build of the app
 you would need an YouTube Api key for this to run,
 it should live in a .env.local file and have this format
 
-REACT_APP_YOUTUBE_API_KEY=yourKeyHere
+### `REACT_APP_YOUTUBE_API_KEY=yourKeyHere`
