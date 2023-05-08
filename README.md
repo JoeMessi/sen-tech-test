@@ -30,9 +30,9 @@ I think that's about it really; sorry about the super long message, but I though
 
 If I had more time, I would have added more test coverage and used analytics tools to check the production build and see how it could be improved. Some caching would be good, as also using Server Side Rendering, which would make everything much faster, I would have used Next.js for that, but I still needed more exposure to it and feel more confident with React atm.
 
-This is the live url:
+This is the live url hosted in Netlify:
 
-# `https://stately-druid-ca5b50.netlify.app/`
+#### `https://stately-druid-ca5b50.netlify.app/`
 
 ### `npm install`
 
@@ -49,4 +49,4 @@ to make a production build of the app
 you would need an YouTube Api key for this to run,
 it should live in a .env.local file and have this format
 
-# `REACT_APP_YOUTUBE_API_KEY=yourKeyHere`
+#### `REACT_APP_YOUTUBE_API_KEY=yourKeyHere`
