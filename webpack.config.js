@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const TerserPlugin = require("terser-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -36,7 +37,14 @@ module.exports = {
         terserOptions: {
           compress: {
             drop_console: true,
+            comparisons: false,
+            inline: 2,
           },
+          output: {
+            comments: false,
+            ascii_only: true,
+          },
+          warnings: false,
         },
       }),
     ],
@@ -51,6 +59,7 @@ module.exports = {
     new Dotenv({
       path: path.resolve(__dirname, ".env.local"),
     }),
+    new CompressionPlugin(),
   ],
   devServer: {
     static: path.resolve(__dirname, "./dist"),

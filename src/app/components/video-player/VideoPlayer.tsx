@@ -1,7 +1,7 @@
 import ReactPlayer from "react-player/youtube";
 import * as S from "./VideoPlayer.styles";
-import { Link } from "react-router-dom";
 import { RoutePaths } from "src/app/routes/route-paths";
+import { Button } from "../button/Button";
 
 interface VideoPlayerProps {
   id?: string;
@@ -22,9 +22,7 @@ export const VideoPlayer = ({
 
   return (
     <S.Card data-testid="player">
-      <Link to={RoutePaths.HOME}>
-        <S.BackBtn>Home</S.BackBtn>
-      </Link>
+      <Button to={RoutePaths.HOME} text="Home" />
       <S.PlayerBox>
         <ReactPlayer
           data-testid="videoPlayer"

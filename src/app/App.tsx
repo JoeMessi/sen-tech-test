@@ -4,6 +4,7 @@ import { RoutePaths } from "./routes/route-paths";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const Player = lazy(() => import("./pages/player/Player"));
+const Error = lazy(() => import("./pages/error/Error"));
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
         <Routes>
           <Route path={RoutePaths.HOME} element={<Home />} />
           <Route path={RoutePaths.PLAYER(":id")} element={<Player />} />
-          <Route path="*" element={<>No Route</>} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

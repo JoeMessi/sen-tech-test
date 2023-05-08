@@ -33,6 +33,7 @@
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "babel-loader": "^9.1.2",
+    "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.7.3",
     "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",

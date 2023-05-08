@@ -64,6 +64,9 @@ export const videoStore = create<videoStoreProps>((set, get) => ({
       try {
         const response = await axios.get(byIdUrl(id));
         const data = response.data.items;
+
+        if (data.length === 0) throw new Error("No video found!");
+
         set({
           video: data[0],
           isLoading: false,
