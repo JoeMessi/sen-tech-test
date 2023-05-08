@@ -6,7 +6,6 @@ export const BackBtn = styled.div`
   margin-bottom: 1em;
   display: inline-block;
   padding: 6px 10px;
-
   border-radius: 3px;
 
   &:hover {
