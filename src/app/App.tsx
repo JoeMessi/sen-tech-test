@@ -13,7 +13,7 @@ export const App = () => {
         <Routes>
           <Route path={RoutePaths.HOME} element={<Home />} />
           <Route path={RoutePaths.PLAYER(":id")} element={<Player />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<Error message="No Route" />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

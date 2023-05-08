@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { videoStore } from "src/app/store/videoStore";
-import { FC, ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import { VideoPlayer } from "src/app/components/video-player/VideoPlayer";
 import { withAppWrapper } from "src/app/shared/appWrapper";
+import { ErrorMessage } from "src/app/components/error-message/errorMessage";
 
 const Player = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const Player = () => {
   }
 
   if (error) {
-    return <div data-testid="error">Error: {error.message}</div>;
+    return <ErrorMessage message={error.message} />;
   }
 
   return (

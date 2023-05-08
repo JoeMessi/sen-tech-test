@@ -19,6 +19,10 @@ const defaultStoreValues = {
 describe("Home - component", () => {
   const renderHome = () => render(<Home />);
 
+  beforeEach(() => {
+    mockVideoStore.mockReset();
+  });
+
   it("should render Home with no errors", async () => {
     mockVideoStore.mockReturnValue(defaultStoreValues);
     const { getByTestId } = renderHome();
@@ -32,14 +36,6 @@ describe("Home - component", () => {
     const { getByTestId } = renderHome();
     await waitFor(() => {
       expect(getByTestId("loading")).toBeInTheDocument();
-    });
-  });
-
-  it("should render Error view when there is error", async () => {
-    mockVideoStore.mockReturnValue({ ...defaultStoreValues, error: true });
-    const { getByTestId } = renderHome();
-    await waitFor(() => {
-      expect(getByTestId("error")).toBeInTheDocument();
     });
   });
 

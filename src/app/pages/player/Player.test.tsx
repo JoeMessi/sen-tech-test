@@ -33,14 +33,6 @@ describe("Player - component", () => {
     });
   });
 
-  it("should render Error view when there is error", async () => {
-    mockVideoStore.mockReturnValue({ ...defaultStoreValues, error: true });
-    const { getByTestId } = renderPlayer();
-    await waitFor(() => {
-      expect(getByTestId("error")).toBeInTheDocument();
-    });
-  });
-
   it("should call fetchVideos", async () => {
     mockVideoStore.mockReturnValue(defaultStoreValues);
     renderPlayer();

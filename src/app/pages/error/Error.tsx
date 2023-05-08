@@ -1,13 +1,12 @@
-import { Button } from "src/app/components/button/Button";
-import { RoutePaths } from "src/app/routes/route-paths";
+import { ErrorMessage } from "src/app/components/error-message/errorMessage";
 import { withAppWrapper } from "src/app/shared/appWrapper";
 
-const Error = () => (
-  <>
-    <p>No Route found!</p>
-    <br />
-    <Button to={RoutePaths.HOME} text="Home" />
-  </>
+interface ErrorProps {
+  message: string;
+}
+
+export const Error = ({ message }: ErrorProps) => (
+  <ErrorMessage message={message} />
 );
 
 export default withAppWrapper(Error);
