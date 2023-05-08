@@ -50,3 +50,10 @@ you would need an YouTube Api key for this to run,
 it should live in a .env.local file and have this format
 
 #### `REACT_APP_YOUTUBE_API_KEY=yourKeyHere`
+
+UPDATE:
+The idea was to have the api key in the .env file and gitignore it so it remains hidden; it's not really critical info, but good practice for sensitive information, then set the env variable in the Netlify Dashboard so it could be accessed in the build. However, I had trouble setting it to Netlify; it looks set, but I still cannot access it.
+So I'm gonna have to not ignore it in .gitignore so it is available during the build. I know, not ideal, but I have followed the tutorial on Netlify, it seems set, but something is not working.
+So you don't actually need any keys to view this app, it will be already there.
+
+Thank you!
