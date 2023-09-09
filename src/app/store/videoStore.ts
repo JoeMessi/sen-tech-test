@@ -39,6 +39,9 @@ export const videoStore = create<videoStoreProps>((set, get) => ({
     try {
       const response = await axios.get(listUrl);
       const data = response.data.items;
+
+      if (data.length === 0) throw new Error("Error fetching videos!");
+
       set({
         videos: data,
         isLoading: false,
